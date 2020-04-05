@@ -10,7 +10,7 @@ def app(request):
     return fixture
 
 def test_add_contact(app):
-    app.login(username='admin', password='secret')
+    app.session.login(username='admin', password='secret')
     app.open_the_contact_creation_page()
     app.add_full_name(CompanyDetails(firstname='Nikita', middlename='Olegovich', lastname='Pavlov', nickname='NIKPAVLOV'))
     app.add_photo(CompanyDetails(image_path=r'C:\Users\admin\Pictures\Screenshots\Снимок экрана (2).png'))
@@ -22,10 +22,10 @@ def test_add_contact(app):
     app.add_date_anniversary(CompanyDetails(a_day='23', a_month='April', a_year='2004'))
     app.select_a_group()
     app.adding_secondary_data(CompanyDetails(address='Asdwqead', phone='342324', notes='fghrturturtuy ruub'))
-    app.logout()
+    app.session.logout()
 
 def test_add_contact2(app):
-    app.login(username='admin', password='secret')
+    app.session.login(username='admin', password='secret')
     app.open_the_contact_creation_page()
     app.add_full_name(CompanyDetails(firstname='Ivan', middlename='Nikitovich', lastname='Melnikov', nickname='Yragan'))
     app.add_photo(CompanyDetails(image_path=r'C:\Users\admin\Pictures\Screenshots\Снимок экрана (2).png'))
@@ -37,5 +37,5 @@ def test_add_contact2(app):
     app.add_date_anniversary(CompanyDetails(a_day='25', a_month='April', a_year='2005'))
     app.select_a_group()
     app.adding_secondary_data(CompanyDetails(address='Asdwqead', phone='342324', notes='fghrturturtuy ruub'))
-    app.logout()
+    app.session.logout()
 
