@@ -19,7 +19,7 @@ def test_add_contact(app):
     app.session.logout()
 
 def test_add_contact2(app):
-    # app.session.login(username='admin', password='secret')
+    app.session.login(username='admin', password='secret')
     app.contact.open_the_contact_creation_page()
     app.contact.add_full_name(CompanyDetails(firstname='Ivan', middlename='Nikitovich', lastname='Melnikov', nickname='Yragan'))
     app.contact.add_photo(CompanyDetails(image_path=r'C:\Users\admin\Pictures\Screenshots\Снимок экрана (2).png'))
