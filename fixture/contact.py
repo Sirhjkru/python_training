@@ -78,7 +78,6 @@ class ContactHelper:
     def add_company(self, company_details):
         wd = self.app.wd
         wd.find_element_by_name("title").click()
-        wd.find_element_by_name("title").click()
         wd.find_element_by_name("title").clear()
         wd.find_element_by_name("title").send_keys(company_details.header)
         wd.find_element_by_name("company").click()
@@ -119,3 +118,11 @@ class ContactHelper:
     def open_the_contact_creation_page(self):
         wd = self.app.wd
         wd.find_element_by_link_text("add new").click()
+
+    def edit_contact(self):
+        wd = self.app.wd
+        wd.find_element_by_xpath("/html/body/div/div[4]/form[2]/table/tbody/tr[2]/td[8]/a/img").click()
+
+    def save_contact_update(self):
+        wd = self.app.wd
+        wd.find_element_by_name("update").click()
